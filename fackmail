@@ -1,0 +1,32 @@
+#!/bin/bash
+# Email Spoofing script.
+echo -e "\033[36mThis is only for testing purposes and can only be used where strict consent has been given. Do not use this for illegal purposes, period.\033[0m"
+echo
+echo 
+
+echo         "               --------------------------------"
+echo         "        ____  | \     ___    _     __         /|"
+echo         "    ____   ___|  \   |___|  /_\   /   | /    / |"
+echo         "      ________|   \  |__|  /___\ |    |/    /  |"
+echo         "          ____|    \ |    /     \ \__ | \  /   |"
+echo         "     _______  |     \_____________________/    |"
+echo         "        _____ |                                |"
+
+echo -e "                   \033[33mWelcome to email spoofing\033[0m"
+echo
+
+read -p "Enter reciver's email(To): " to
+
+read -p "Enter sender's email(From): " from
+
+read -p "Enter name of sender: " name
+
+read -p "Enter username of SMTP(sendgrid): " user
+
+read -p "Enter password of SMTP(sendgrid): " pass
+
+read -p "Subject of your massage: " Sub
+
+read -p "Enter massage body: " body
+
+sendemail -s smtp.sendgrid.net:2525 -f $from -t $to -xu $user -xp $pass -u "$Sub" -m $body -o message-header="from: $name <$from>" 
