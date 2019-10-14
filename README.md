@@ -1,5 +1,5 @@
 # fackmail
-Jus a simple email spoofing script ceated in bash.
+Jus a simple email spoofing script created in bash.
 
 # Supported pletform
 ~Kali Linux
